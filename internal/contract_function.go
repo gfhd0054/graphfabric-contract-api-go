@@ -8,9 +8,9 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/hyperledger/fabric-contract-api-go/internal/types"
-	metadata "github.com/hyperledger/fabric-contract-api-go/metadata"
-	"github.com/hyperledger/fabric-contract-api-go/serializer"
+	"github.com/gfhd0054/graphfabric-contract-api-go/internal/types"
+	metadata "github.com/gfhd0054/graphfabric-contract-api-go/metadata"
+	"github.com/gfhd0054/graphfabric-contract-api-go/serializer"
 )
 
 type contractFunctionParams struct {

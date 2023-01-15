@@ -15,12 +15,12 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/hyperledger/fabric-chaincode-go/pkg/cid"
-	"github.com/hyperledger/fabric-chaincode-go/shim"
-	"github.com/hyperledger/fabric-contract-api-go/internal"
-	"github.com/hyperledger/fabric-contract-api-go/internal/utils"
-	"github.com/hyperledger/fabric-contract-api-go/metadata"
-	"github.com/hyperledger/fabric-contract-api-go/serializer"
+	"github.com/gfhd0054/graphfabric-chaincode-go/pkg/cid"
+	"github.com/gfhd0054/graphfabric-chaincode-go/shim"
+	"github.com/gfhd0054/graphfabric-contract-api-go/internal"
+	"github.com/gfhd0054/graphfabric-contract-api-go/internal/utils"
+	"github.com/gfhd0054/graphfabric-contract-api-go/metadata"
+	"github.com/gfhd0054/graphfabric-contract-api-go/serializer"
 	"github.com/hyperledger/fabric-protos-go/peer"
 )
 

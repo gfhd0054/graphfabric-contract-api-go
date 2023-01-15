@@ -32,7 +32,7 @@ func MyAfterTransaction(ctx contractapi.TransactionContextInterface, iface inter
 }
 ```
 
-Notice that neither the before or after function in the example above directly receive the parameter data, this is as these functions have to be generic to all calls to the contract. The raw arguments passed in to the call can be accessed using the [stub](https://godoc.org/github.com/hyperledger/fabric-chaincode-go/shim#ChaincodeStub) via the transaction context. The interface value provided to the after function is the value returned by the named function. If we take the above example then that interface for a call to `DoSomething` would be the string `Hello World`.
+Notice that neither the before or after function in the example above directly receive the parameter data, this is as these functions have to be generic to all calls to the contract. The raw arguments passed in to the call can be accessed using the [stub](https://godoc.org/github.com/gfhd0054/graphfabric-chaincode-go/shim#ChaincodeStub) via the transaction context. The interface value provided to the after function is the value returned by the named function. If we take the above example then that interface for a call to `DoSomething` would be the string `Hello World`.
 
 > Note: if the named function has no defined success response or it returns the type `interface{}` as its success response and has returned nil for that interface the after transaction will receive a nil value for its interface parameter of type `contractapi.UndefinedInterface`. Comparing this value to nil will result in false unless it is typecast.
 
@@ -56,13 +56,13 @@ Likewise if the named function (e.g. `DoSomething`) errors the after function is
 
 > Note: In chaincode when a peer receives an error response anything written to the world state during that call is undone.
 
-To create your function to be called before each transaction create a new file called `transaction-context.go` in the same folder as you used for the [previous tutorial](./getting-started#housekeeping). The following code should be entered in this file. In here we will create our custom transaction context to store data retrieved in our before function for use in the called function. Custom transaction contexts must implement the [contractapi.SettableTransactionContextInterface](https://godoc.org/github.com/hyperledger/fabric-contract-api-go/contractapi#SettableTransactionContextInterface). Like when defining a contract, the easiest way to meet this interface is to embed a struct from the contractapi, this time the standard transaction context.
+To create your function to be called before each transaction create a new file called `transaction-context.go` in the same folder as you used for the [previous tutorial](./getting-started#housekeeping). The following code should be entered in this file. In here we will create our custom transaction context to store data retrieved in our before function for use in the called function. Custom transaction contexts must implement the [contractapi.SettableTransactionContextInterface](https://godoc.org/github.com/gfhd0054/graphfabric-contract-api-go/contractapi#SettableTransactionContextInterface). Like when defining a contract, the easiest way to meet this interface is to embed a struct from the contractapi, this time the standard transaction context.
 
 ```
 package main
 
 import (
-	"github.com/hyperledger/fabric-contract-api-go/contractapi"
+	"github.com/gfhd0054/graphfabric-contract-api-go/contractapi"
 )
 
 // CustomTransactionContext adds methods of storing and retrieving additional data for use

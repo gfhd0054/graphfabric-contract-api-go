@@ -3,7 +3,7 @@
 
 package contractapi
 
-import "github.com/hyperledger/fabric-contract-api-go/metadata"
+import "github.com/gfhd0054/graphfabric-contract-api-go/metadata"
 
 // IgnoreContractInterface extends ContractInterface and provides additional functionality
 // that can be used to mark which functions should not be accessible by invoking/querying
